@@ -1,0 +1,441 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        /* Style the header */
+        header {
+            background-color: #5a7f8c;
+            padding: 30px;
+            text-align: center;
+            font-size: 35px;
+            color: white;
+        }
+
+        /* Create two columns/boxes that floats next to each other */
+        nav {
+            float: left;
+            width: 50%;
+            height: 300px; /* only for demonstration, should be removed */
+            background: #c7d1cd;
+            padding: 20px;
+            /*TEXT-ALI*/
+        }
+
+            /* Style the list inside the menu */
+            nav ul {
+                list-style-type: none;
+                padding: 0;
+            }
+
+        article {
+            float: left;
+            padding: 20px;
+            width: 50%;
+            background-color: #777;
+            height: 300px; /* only for demonstration, should be removed */
+        }
+
+        /* Clear floats after the columns */
+        section:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        /* Style the footer */
+        footer {
+            background-color: #e6e6e6;
+            padding: 10px;
+            text-align: center;
+            color: BLACK;
+        }
+
+        /* Responsive layout - makes the two columns/boxes stack on top of each other instead of next to each other, on small screens */
+        @media (max-width: 600px) {
+            nav, article {
+                width: 100%;
+                height: auto;
+            }
+        }
+
+        a {
+            color: black;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+
+
+
+    <header>
+        <div class="cities">
+            <div style="float: left;">
+                <button type="button"><a href="menu.html">|||</a></button>
+
+            </div>
+            <h2>AITC</h2>
+        </div>
+    </header>
+    <div class="container">
+
+        <section>
+            <nav>
+
+
+                <div id="paired-devices" class="state">
+                    <div class="headline">
+
+                        <button id="refresh-paired-devices" class="btn btn-primary">Refresh</button>
+                        Paired devices
+                    </div>
+                    <br />
+                    <br />
+                    <br />
+                    <form>
+                        <div class="list"></div>
+                        <br />
+                        <br />
+
+                        <input type="submit" name="connect" value="Connect" class="btn btn-primary">
+                    </form>
+                </div>
+                <br />
+            </nav>
+
+            <article>
+
+                <div id="terminal" class="state">
+                    <div id="selected-device">
+                        <button class="go-back btn btn-primary">Back</button>
+                        <span class="name"></span>
+                        <span class="address"></span>
+                        <span class="status"></span>
+                        <button id="toggle-connection" class="btn btn-primary"></button>
+                    </div>
+                    <br />   <br />   <br />
+                    <div>
+                        <button id="clear-data" class="btn btn-primary">Clear</button>
+                        <br />
+                        <label><input type="checkbox" name="autoscroll" value="1" checked> Auto scroll</label>
+
+                    </div>
+
+                </div>
+                <br />
+                <br />
+
+                <button id="btnc" style="height: 100px;width: 100%;text-align: center;">Check Line</button>
+
+            </article>
+
+
+            <br />   <br />   <br />
+
+
+
+            <div class="grid">
+                <div class="item1">line1</div>
+                <div class="item2"></div>
+                <div class="item3"></div>
+                <div class="item4" style="visibility: hidden;"></div>
+                <div class="item5"></div>
+                <div class="item6"></div>
+                <div class="item7"></div>
+                <div class="item8"></div>
+                <div class="item9"></div>
+                <div class="item10"></div>
+                <div class="item11"></div>
+                <div class="item12"></div>
+                <div class="item13"></div>
+                <div class="item14"></div>
+            </div>
+
+
+
+
+        </section>
+    </div>
+
+
+    <footer>
+        <p>
+            Name Of Group : MGS
+        </p>
+        <P> Name Of School:DNM
+    </footer>
+
+    <br />
+    <div style="visibility:hidden;">
+        <div id="data"></div>
+
+        <div>
+            <br />   <br />   <br />
+            <form>
+                <br />   <br />
+                <input type="text" name="data" class="form-control">
+                <br /> <br />   <br />
+                <input type="submit" name="send" value="Send" class="btn btn-primary">
+            </form>
+        </div>
+    </div>
+
+
+
+    <style>
+        .grid {
+            display: inline-grid;
+            grid-gap: 10px;
+            grid-template-columns: 50px 30px [main-start] 0fr [main-end] 30px 50px;
+            grid-template-rows: 130px [main-start] 170px 210px [main-end] 150px;
+            padding: 10px 0px 0px 0px;
+            margin: 0px 0px 0px 10%;
+        }
+
+        [class^="item"] {
+            background-color: #c7d1cd;
+        }
+
+        .item1 {
+            background-color: #5a7f8c;
+            grid-area: main;
+            height: 530px;
+            /* top: 50px; */
+            padding: 50px 10px 10px 10px;
+            margin: -140px 0px 0px 0px;
+            /* position: absolute; */
+            align-items: center;
+        }
+    </style>
+
+
+
+    <!-- jQuery -->
+    <script src="js/jquery.min.js"></script>
+
+    <script type="text/javascript" src="cordova.js"></script>
+    <!--<script type="text/javascript" src="lib/jquery-3.1.1.min.js"></script>-->
+    <script type="text/javascript" src="js/index.js"></script>
+
+
+    <script>
+
+        $(document).ready(function () {
+            while (1) {
+                $("#btnc").click(function () {
+
+                    var sss = $(".in");
+                    var ttt = sss.text();
+                    var qqq = ttt.length;
+                    //var sss2 = $(".rt2");
+                    //var ttt2 = sss2.text();
+
+                    //       alert(qqq);
+
+                    if (qqq == '3') {
+
+                        alert('warning !!!!Air polotion!!! line 1 is closed for you :{|');
+
+                        $(".item1").css("background-color", "red");
+
+                        $('#data').text('');
+                    }
+
+
+                    else if (qqq == '2') {
+
+                        alert('!!!!line 1 is closed for you   ambulanccccccc!!!!');
+
+
+                        // setTimeout(function () {
+
+                        ///   $(".item1").css("background-color", "#5a7f8c");
+
+                        ///                    }, 6000);
+
+                        $(".item1").css("background-color", "yellow");
+
+                        $('#data').text('');
+
+
+                    }
+
+                    else if (qqq == '4') {
+                        alert('street 1 is open');
+
+
+                        $(".item1").css("background-color", "#5a7f8c");
+
+                        $('#data').text('');
+
+
+                    }
+
+                    else {
+                        $(".item1").css("background-color", "#5a7f8c");
+                        alert('Normal Mode');
+                        $('#data').text('');
+                    }
+
+
+
+
+
+                });
+
+            }
+        });
+
+
+
+
+                       /*
+                                if (ttt == 's') {
+
+                                    alert('ambolanc <3');
+                                    setTimeout(function () {
+
+                                        $(".item1").css("background-color", "#5a7f8c");
+
+                                    }, 4000);
+
+                                    $(".item1").css("background-color", "red");
+
+                                }
+                                else {
+                                    setTimeout(function () {
+
+                                        $(".item1").css("background-color", "#5a7f8c");
+
+                                    }, 4000);
+
+                                    $(".item1").css("background-color", "red");
+
+                                }
+                                */
+
+
+
+                                    //var xx = bluetoothSerial.read(yy, failure);
+                           /*         var xxz;
+                                    var kl;
+                                    kl = bluetoothSerial.read(function (xxz) {
+                                        console.log(xxz);
+                                    }, failure);
+
+                                    alert(kl);
+                                    */
+
+
+                                    //var ttt = $("ul li:first").text();
+                                    //var ttt = $("#data .in").val();
+                                //    var sss = $("#data .in");
+                                //    var ttt = sss.text();
+                                //    //$("h2.class")
+                                //    //$("ul li:first").val();
+
+                                //    //if (kkk != '' || kkk != 'A')
+                                //    //if (kkk != '') {
+
+                                //    if (ttt != '')
+                                //        {
+                                //    //if (ttt == 's') {
+                                //        alert('warning !!!! line 1 is closed for you :{|');
+                                //        //bluetoothSerial.read()
+                                //        if (bluetoothSerial.read(x, failure) == 'k')
+                                //{
+                                //    alert('ambolanc <3');
+                                //    setTimeout(function () {
+
+
+
+                                //        $(".item1").css("background-color", "#5a7f8c");
+
+                                //    }, 4000);
+
+                                //    $(".item1").css("background-color", "red");
+
+                                //}
+                                //        //$(".item1").css("background-color", "red");
+                                //        setTimeout(function () {
+
+
+
+                                //            $(".item1").css("background-color", "#5a7f8c");
+
+                                //        }, 4000);
+
+                                //        $(".item1").css("background-color", "red");
+
+                                //    //}
+
+                                //    }
+                                //    //}
+                                //    else {
+                                //        //alert(ttt);
+
+                                //        alert('eroor :(');
+                                //    }
+
+
+
+
+                                //   var kkk;
+                                //   kkk = app.reciveData2();
+
+                                //   if (kkk = "s") {
+                                ////       $('.item1').addClass()
+                                //       //$(".item1").css("background-color", "red");
+                                //   }
+
+
+
+                                //$(document).ready(function () {
+                                //    $("#btnc").click(function () {
+
+                                //        var ttt = $(".in").text();
+
+                                //        if (kkk = "s") {
+                                //            $(".item1").css("background-color", "red").slideUp(2000).slideDown(2000);
+                                //            $()
+                                //        }
+
+
+
+                                //    });
+                                //});
+
+
+
+
+
+
+
+                                                //var ttt = $("#insss").text;
+
+                                                //if (ttt == 'A')
+                                                //{
+                                                //    $(".item1").hide();
+                                                //}
+
+
+    </script>
+
+
+</body>
+</html>

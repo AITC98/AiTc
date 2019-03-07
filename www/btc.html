@@ -1,0 +1,389 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        header {
+            background-color: #5a7f8c;
+            padding: 30px;
+            text-align: center;
+            font-size: 35px;
+            color: white;
+        }
+
+        nav {
+            float: left;
+            width: 50%;
+            height: 300px; /* only for demonstration, should be removed */
+            background: #c7d1cd;
+            padding: 20px;
+        }
+
+            nav ul {
+                list-style-type: none;
+                padding: 0;
+            }
+
+        article {
+            float: left;
+            padding: 20px;
+            width: 50%;
+            background-color: #777;
+            height: 300px; /* only for demonstration, should be removed */
+        }
+
+        /* Clear floats after the columns */
+        section:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        footer {
+            background-color: #e6e6e6;
+            padding: 10px;
+            text-align: center;
+            color: BLACK;
+        }
+
+        @media (max-width: 600px) {
+            nav, article {
+                width: 100%;
+                height: auto;
+            }
+        }
+
+        a {
+            color: black;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+
+
+
+    <header>
+        <div class="cities">
+            <div style="float: left;">
+                <button type="button"><a href="menu.html">|||</a></button>
+
+            </div>
+            <h2>AITC</h2>
+        </div>
+    </header>
+    <div class="container">
+
+        <section>
+            <nav>
+
+
+                <div id="paired-devices" class="state">
+                    <div class="headline">
+
+                        <button id="refresh-paired-devices" class="btn btn-primary">Refresh</button>
+                        Paired devices
+                    </div>
+                    <br />
+                    <br />
+                    <br />
+                    <form>
+                        <div class="list"></div>
+                        <br />
+                        <br />
+
+                        <input type="submit" name="connect" value="Connect" class="btn btn-primary">
+                    </form>
+                </div>
+                <br />
+            </nav>
+            <a href="kamel b n.html" id="ABOUT_COLOR">?HELLP COLOR?</a>
+            <article>
+
+                <div id="terminal" class="state">
+                    <div id="selected-device">
+                        <button class="go-back btn btn-primary">Back</button>
+                        <span class="name"></span>
+                        <span class="address"></span>
+                        <span class="status"></span>
+                        <button id="toggle-connection" class="btn btn-primary"></button>
+                    </div>
+                    <br />   <br />   <br />
+                    <div>
+                        <button id="clear-data" class="btn btn-primary">Clear</button>
+                        <br />
+                        <label><input type="checkbox" name="autoscroll" value="1" checked> Auto scroll</label>
+
+                    </div>
+
+                </div>
+                <br />
+                <div>
+                    <div id="data"></div>
+
+                    <div>
+                        <br />   <br />   <br />
+                        <form>
+                            <br />   <br />
+                            <input type="text" name="data" class="form-control">
+                            <br /> <br />   <br />
+                            <input type="submit" name="send" value="Send" class="btn btn-primary">
+                        </form>
+                    </div>
+                </div>
+
+                <br />
+
+
+                <button id="btnc" style="height: 100px;width: 100%;text-align: center;">Check Line</button>
+
+            </article>
+
+
+            <br />   <br />   <br />
+
+
+
+
+            <div class="grid">
+                <div class="item1">line1</div>
+                <div class="item2"></div>
+                <div class="item3"></div>
+                <div class="item4" style="visibility: hidden;"></div>
+                <div class="item5"></div>
+                <div class="item6"></div>
+                <div class="item7"></div>
+                <div class="item8"></div>
+                <div class="item9"></div>
+                <div class="item10"></div>
+                <div class="item11"></div>
+                <div class="item12"></div>
+                <div class="item13"></div>
+                <div class="item14"></div>
+            </div>
+
+            <hr />
+            <hr />
+            <hr />
+            <button id="btnc2" style="height: 100px;width: 100%;text-align: center;">Check Lines in model</button>
+            <hr />
+            <hr />
+            <hr />
+
+            <br />
+            <br />
+
+
+            <ol class="list list-view-filter">
+                <li id="kohsangi">Kohsangi</li>
+                <li id="vakil">Vakil Abad</li>
+                <li id="honarestan">Honarestan</li>
+                <li id="sajad">Sajad</li>
+                <li id="ahmad">Ahmad Abad</li>
+                <li id="saremi">Saremi</li>
+                <li id="Rahnamaie">Rahnamaie</li>
+            </ol>
+
+
+            <br />
+            <br />
+            <br />
+            <br />
+
+        </section>
+    </div>
+
+
+
+    <footer>
+        <p>
+            Name Of Group : MGS
+        </p>
+        <P> Name Of School:DNM
+    </footer>
+
+    <br />
+
+
+
+    <style>
+
+        .grid {
+            display: inline-grid;
+            grid-gap: 10px;
+            grid-template-columns: 50px 30px [main-start] 0fr [main-end] 30px 50px;
+            grid-template-rows: 130px [main-start] 170px 210px [main-end] 150px;
+            padding: 10px 0px 0px 0px;
+            margin: 0px 0px 0px 10%;
+        }
+
+        [class^="item"] {
+            background-color: #c7d1cd;
+        }
+
+        .item1 {
+            background-color: #5a7f8c;
+            grid-area: main;
+            height: 530px;
+            padding: 50px 10px 10px 10px;
+            margin: -140px 0px 0px 0px;
+            align-items: center;
+        }
+
+
+
+        .filter-buttons {
+            display: flex;
+            margin-bottom: 20px;
+        }
+
+        .list-view-button,
+        .grid-view-button {
+            color: white;
+            border: 1px solid white;
+            padding: 5px;
+            font-size: 14px;
+            cursor: pointer;
+            border-radius: 3px;
+        }
+
+            .list-view-button:hover,
+            .grid-view-button:hover {
+                background: white;
+                color: #c7d1cd;
+            }
+
+        .list-view-button {
+            margin-right: 10px;
+        }
+
+        .list {
+            list-style: none;
+            margin: 10px;
+            padding: 0px;
+            /* display: flex; */
+        }
+
+        li {
+            background-color: #5a7f8c;
+            color: white;
+            border-radius: 3px;
+            margin-bottom: 10px;
+            transition: 0.3s;
+        }
+
+
+        .list.list-view-filter {
+            /* margin-top: 60px; */
+            /* flex-direction: column; */
+            /* position: relative; */
+        }
+
+            .list.list-view-filter li {
+                padding: 10px;
+            }
+
+        .list.grid-view-filter {
+            flex-flow: row wrap;
+        }
+
+            .list.grid-view-filter li {
+                width: calc(50% - 210px);
+                padding: 100px;
+                margin-right: 10px;
+                text-align: center;
+            }
+
+        #ABOUT_COLOR:link, #ABOUT_COLOR:visited {
+            background-color: #777777;
+            color: white;
+            padding: 9px 7px;
+            text-decoration: none;
+            position: fixed;
+            z-index: 50;
+            float: left;
+            left: 0;
+        }
+
+        #ABOUT_COLOR:hover, #ABOUT_COLOR:active {
+            background-color: gray;
+        }
+    </style>
+
+
+    <script src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+
+
+    <script>
+
+        $(document).ready(function () {
+
+
+            $("#btnc").click(function () {
+
+                var sss = $(".in");
+                var ttt = sss.text();
+                var qqq = ttt.length;
+
+                if (qqq == '2') {
+
+                    alert('!!!!line 1 is closed for you   ambulanccccccc!!!!');
+
+                    $(".item1").css("background-color", "yellow");
+
+                    $('#data').text('');
+
+
+                }
+                else if (qqq == '3') {
+
+                    alert('warning !!!!Air polotion!!! line 1 is closed for you :{|');
+
+                    $(".item1").css("background-color", "red");
+
+                    $('#data').text('');
+                }
+                else if (qqq == '4') {
+                    alert('street 1 is open');
+
+
+                    $(".item1").css("background-color", "#5a7f8c");
+
+                    $('#data').text('');
+
+
+                }
+                else {
+                    $(".item1").css("background-color", "#5a7f8c");
+                    alert('Normal Mode');
+                    $('#data').text('');
+                }
+
+
+
+            });
+            
+        });
+
+
+    </script>
+
+
+</body>
+</html>

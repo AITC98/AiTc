@@ -1,0 +1,203 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+<body>
+
+
+    <br />   <br />   <br />
+
+
+
+
+    <div class="grid">
+        <div class="item1">line1</div>
+        <div class="item2"></div>
+        <div class="item3"></div>
+        <div class="item4" style="visibility: hidden;"></div>
+        <div class="item5"></div>
+        <div class="item6"></div>
+        <div class="item7"></div>
+        <div class="item8"></div>
+        <div class="item9"></div>
+        <div class="item10"></div>
+        <div class="item11"></div>
+        <div class="item12"></div>
+        <div class="item13"></div>
+        <div class="item14"></div>
+    </div>
+
+    <hr />
+    <hr />
+
+
+    <div id="data" style="visibility:hidden;"></div>
+
+
+
+    <style>
+
+        .grid {
+            display: inline-grid;
+            grid-gap: 10px;
+            grid-template-columns: 50px 30px [main-start] 0fr [main-end] 30px 50px;
+            grid-template-rows: 130px [main-start] 170px 210px [main-end] 150px;
+            padding: 10px 0px 0px 0px;
+            margin: 0px 0px 0px 10%;
+        }
+
+        [class^="item"] {
+            background-color: #c7d1cd;
+        }
+
+        .item1 {
+            background-color: #5a7f8c;
+            grid-area: main;
+            height: 530px;
+            padding: 50px 10px 10px 10px;
+            margin: -140px 0px 0px 0px;
+            align-items: center;
+        }
+
+
+
+        .filter-buttons {
+            display: flex;
+            margin-bottom: 20px;
+        }
+
+        .list-view-button,
+        .grid-view-button {
+            color: white;
+            border: 1px solid white;
+            padding: 5px;
+            font-size: 14px;
+            cursor: pointer;
+            border-radius: 3px;
+        }
+
+            .list-view-button:hover,
+            .grid-view-button:hover {
+                background: white;
+                color: #c7d1cd;
+            }
+
+        .list-view-button {
+            margin-right: 10px;
+        }
+
+        .list {
+            list-style: none;
+            margin: 10px;
+            padding: 0px;
+            /* display: flex; */
+        }
+
+        li {
+            background-color: #5a7f8c;
+            color: white;
+            border-radius: 3px;
+            margin-bottom: 10px;
+            transition: 0.3s;
+        }
+
+
+        .list.list-view-filter {
+            /* margin-top: 60px; */
+            /* flex-direction: column; */
+            /* position: relative; */
+        }
+
+            .list.list-view-filter li {
+                padding: 10px;
+            }
+
+        .list.grid-view-filter {
+            flex-flow: row wrap;
+        }
+
+            .list.grid-view-filter li {
+                width: calc(50% - 210px);
+                padding: 100px;
+                margin-right: 10px;
+                text-align: center;
+            }
+
+        #ABOUT_COLOR:link, #ABOUT_COLOR:visited {
+            background-color: #777777;
+            color: white;
+            padding: 9px 7px;
+            text-decoration: none;
+            position: fixed;
+            z-index: 50;
+            float: left;
+            left: 0;
+        }
+
+        #ABOUT_COLOR:hover, #ABOUT_COLOR:active {
+            background-color: gray;
+        }
+    </style>
+
+
+
+    <script src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+
+            var xx;
+
+            app.connect('00:21:13:04:55:3A');
+            //bluetoothSerial.connect('00:21:13:04:55:3A', '', '');
+            xx = app.reciveData2();
+            //bluetoothSerial.read(xx, failure);
+
+            var qqq = xx.length;
+
+            if (qqq == '2') {
+
+                alert('!!!!line 1 is closed for you   ambulanccccccc!!!!');
+
+                $(".item1").css("background-color", "yellow");
+
+                $('#data').text('');
+
+            }
+
+            else if (qqq == '3') {
+
+                alert('warning !!!!Air polotion!!! line 1 is closed for you :{|');
+
+                $(".item1").css("background-color", "red");
+
+                $('#data').text('');
+            }
+            else if (qqq == '4') {
+                alert('street 1 is open');
+
+
+                $(".item1").css("background-color", "#5a7f8c");
+
+                $('#data').text('');
+
+
+            }
+            else {
+                $(".item1").css("background-color", "#5a7f8c");
+                //  alert('Normal Mode');
+                $('#data').text('');
+            }
+            
+        });
+
+    </script>
+
+
+</body>
+</html>

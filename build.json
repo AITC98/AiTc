@@ -1,0 +1,18 @@
+{
+  "android": {
+    "debug": {
+      "keystore": "E:\\Project\\KeyStore\\release.keystore",
+      "storePassword": "nimanimanima",
+      "alias": "android",
+      "password": "nimanimanima",
+      "keystoreType": ""
+    },
+    "release": {
+      "keystore": "E:\\Project\\KeyStore\\release.keystore",
+      "storePassword": "nimanimanima",
+      "alias": "android",
+      "password": "nimanimanima",
+      "keystoreType": ""
+    }
+  }
+}

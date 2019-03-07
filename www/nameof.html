@@ -1,0 +1,104 @@
+﻿<!DOCTYPE html>
+<head>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<style>
+body {
+  font-family: 'Helvetica';
+  background-color: #c7d1cd;
+}
+
+.filter-buttons {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.list-view-button,
+.grid-view-button {
+  color: white;
+  border: 1px solid white;
+  padding: 5px;
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 3px;
+}
+
+.list-view-button:hover,
+.grid-view-button:hover {
+  background: white;
+  color: #c7d1cd;
+}
+
+.list-view-button {
+  margin-right: 10px;
+}
+
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+li {
+  background-color: #5a7f8c;
+  color: white;
+  border-radius: 3px;
+  margin-bottom: 10px;
+  transition: 0.3s;
+}
+
+
+.list.list-view-filter {
+  flex-direction: column;
+}
+
+.list.list-view-filter li {
+  padding: 10px;
+}
+
+.list.grid-view-filter {
+  flex-flow: row wrap;
+}
+
+.list.grid-view-filter li {
+  width: calc(50% - 210px);
+  padding: 100px;
+  margin-right: 10px;
+  text-align: center;
+}
+
+
+
+
+</style>
+<body>
+
+<script>
+
+const listViewButton = document.querySelector('.list-view-button');
+const gridViewButton = document.querySelector('.grid-view-button');
+const list = document.querySelector('ol');
+
+listViewButton.onclick = function () {
+  list.classList.remove('grid-view-filter');
+  list.classList.add('list-view-filter');
+}
+
+gridViewButton.onclick = function () {
+  list.classList.remove('list-view-filter');
+  list.classList.add('grid-view-filter');
+}
+</script>
+
+<ol class="list list-view-filter">
+  <li id="kohsangi">Kohsangi</li>
+  <li id="vakil">Vakil Abad</li>
+  <li id="honarestan">Honarestan</li>
+  <li id="sajad">Sajad</li>
+  <li id="ahmad abad">Ahmad Abad</li>
+  <li id="saremi">Saremi</li>
+  <li id="Rahnamaie">Rahnamaie</li>
+</ol>
+</body>
